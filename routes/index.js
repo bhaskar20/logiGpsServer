@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var path =require('path')
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	var options = {
@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         'x-sent': true
     }
   };
-  res.sendFile("../public/index.html",options,function(err){
+  res.sendFile(path.path.join(__dirname+"../public/index.html"),options,function(err){
   	if(err){
   		console.log(err);
   	}

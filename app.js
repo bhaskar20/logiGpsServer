@@ -8,8 +8,6 @@ var bodyParser = require('body-parser');
 //db
 var mongoose = require('mongoose');
 var uriUtil = require('mongodb-uri');
-//gps func
-var gps = require("gps-tracking");
 
 //code starts
 //database
@@ -27,13 +25,13 @@ var conn = mongoose.connection;
 conn.on('open', function (ref) {
   console.log('Connected to mongo server.');
 });
-mongoose.connection.on('error', function (err) {
+conn.on('error', function (err) {
   console.log('Could not connect to mongo server!');
   console.log(err);
 });
 
 conn.once('open', function() {
-  // Wait for the database connection to establish, then start the app.                         
+  require('./gpsFun.js')                         
 });
 
 //used middlewares
