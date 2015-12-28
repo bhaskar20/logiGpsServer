@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         'x-sent': true
     }
   };
-  res.sendFile(path.join(__dirname+"../public/index.html"),options,function(err){
+  res.sendFile(),options,function(err){
   	if(err){
   		console.log(err);
   	}
