@@ -2,7 +2,7 @@ var gps = require("gps-tracking");
 
 var options = {
     'debug'                 : true,
-    'port'                  : 8090,
+    'port'                  : 8080,
     'device_adapter'        : "TK103"
 }
 
@@ -19,6 +19,7 @@ var server = gps.server(options,function(device,connection){
 
         //After the ping is received, but before the data is saved
         //console.log(data);
+        console.log(data);
         return data;
 
     });

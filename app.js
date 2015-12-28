@@ -41,8 +41,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //routing
-var routes = require('./routes/index');
-app.use('/', routes);
+//var routes = require('./routes/index');
+//app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
