@@ -1,26 +1,17 @@
-var gps = require("gps-tracking");
+var gps = require("gpslibgt06n");
 
 var options = {
     'debug'                 : true,
     'port'                  : 8080,
-    'device_adapter'        : "TK103"
+    'device_adapter'        : "GT06"
 }
 
 var server = gps.server(options,function(device,connection){
 	connection.on("data",function(res){
         console.log(res);
     });
-    console.log(device.uid);
-    console.log(device.name);
-    console.log(device.ip);
-    console.log(device.port);
-
-	device.on("ping",function(data){
-
-        //After the ping is received, but before the data is saved
-        //console.log(data);
-        console.log(data);
-        return data;
+    device.on("login_request",function (data) {
+        device.login_authorized(true,data);
 
     });
 });
