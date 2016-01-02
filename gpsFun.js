@@ -12,6 +12,5 @@ var server = gps.server(options,function(device,connection){
     });
     device.on("login_request",function (data) {
         device.login_authorized(true,data);
-
     });
 });
