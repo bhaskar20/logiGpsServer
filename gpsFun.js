@@ -10,8 +10,8 @@ var server = gps.server(options,function(device,connection){
 	connection.on("data",function(res){
         console.log(res);
     });
-    device.on("login_request",function (data) {
-    	console.log(data);
+    device.on("login_request",function (uid,data) {
+    	console.log(uid,data);
         device.login_authorized(true,data);
     });
 });
