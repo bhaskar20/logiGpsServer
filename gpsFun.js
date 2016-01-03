@@ -14,4 +14,20 @@ var server = gps.server(options,function(device,connection){
     	console.log(uid,data);
         device.login_authorized(true,data);
     });
+    device.on("ping",function (data) {
+        console.log("data from:"+ connection.device.uid);
+        console.log(data);
+    });
+    device.on("alarm",function (data,alarmData,fullData) {
+        console.log(data);
+        console.log(alarmData);
+        console.log(fullData);
+    });
+    device.on("status",function (data,fullData) {
+        console.log("data from:"+ connection.device.uid);
+        console.log(data);
+        console.log(fullData);
+    });
+
+
 });
