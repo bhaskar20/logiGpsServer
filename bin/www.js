@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+require('../app');
 var debug = require('debug')('nodeGps:server');
 var http = require('http');
 
