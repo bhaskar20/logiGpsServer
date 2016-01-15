@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-require('../app');
+var app = require('../app');
 var debug = require('debug')('nodeGps:server');
 var http = require('http');
 
@@ -71,6 +71,6 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-var server = http.createServer(app);
+var server = http.createServer(app.app);
 
 server.listen(port);
