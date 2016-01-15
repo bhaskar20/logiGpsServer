@@ -31,9 +31,10 @@ var conn = mongoose.connection;
 conn.on('open', function (ref) {
   console.log('Connected to mongo server.');
 
-  /*
 
+  
 
+/*
   var gpsinfo = new gps({
   "gpsId": "124",
   "location" : [1.4,2.2],
@@ -46,8 +47,8 @@ gpsinfo.save(function(err) {
 
   console.log('User saved successfully!');
 });
-*/
 
+*/
 
 
 var time = Date.now();
@@ -55,12 +56,12 @@ var startTime = Date.now();
 var endTime = Date.now();
 var gps = "123";
 var gpsArray = ["123","124"];
-/*
+
 query.getDataAtTimeForOneGps(gps,time);
 query.getDataAtTimeForMultipleGps(gpsArray,time);
 query.getDataBWTimeForOneGps(gps,startTime,endTime);
 query.getDataBWTimeForMultipleGps(gpsArray,startTime,endTime);
-*/
+
 
 //var time = Date.now();
 //var array = ["123","124"];
