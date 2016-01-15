@@ -10,6 +10,11 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var uriUtil = require('mongodb-uri');
 
+var gps = require('./models/gps');
+var query = require('./api/query');
+
+
+
 //code starts
 //database
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
@@ -25,6 +30,42 @@ var conn = mongoose.connection;
 
 conn.on('open', function (ref) {
   console.log('Connected to mongo server.');
+
+  /*
+
+
+  var gpsinfo = new gps({
+  "gpsId": "124",
+  "location" : [1.4,2.2],
+  "speed":10.4 
+});
+
+// call the built-in save method to save to the database
+gpsinfo.save(function(err) {
+  if (err) throw err;//
+
+  console.log('User saved successfully!');
+});
+*/
+
+
+
+var time = Date.now();
+var startTime = Date.now();
+var endTime = Date.now();
+var gps = "123";
+var gpsArray = ["123","124"];
+/*
+query.getDataAtTimeForOneGps(gps,time);
+query.getDataAtTimeForMultipleGps(gpsArray,time);
+query.getDataBWTimeForOneGps(gps,startTime,endTime);
+query.getDataBWTimeForMultipleGps(gpsArray,startTime,endTime);
+*/
+
+//var time = Date.now();
+//var array = ["123","124"];
+//query.api2(time,array);
+
 });
 conn.on('error', function (err) {
   console.log('Could not connect to mongo server!');
