@@ -14,19 +14,6 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3001');
 
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(app);
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -83,3 +70,9 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+var server = http.createServer(app);
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
