@@ -57,10 +57,10 @@ var endTime = Date.now();
 var gps = "123";
 var gpsArray = ["123","124"];
 
-query.getDataAtTimeForOneGps(gps,time);
-query.getDataAtTimeForMultipleGps(gpsArray,time);
-query.getDataBWTimeForOneGps(gps,startTime,endTime);
-query.getDataBWTimeForMultipleGps(gpsArray,startTime,endTime);
+// query.getDataAtTimeForOneGps(gps,time);
+// query.getDataAtTimeForMultipleGps(gpsArray,time);
+// query.getDataBWTimeForOneGps(gps,startTime,endTime);
+// query.getDataBWTimeForMultipleGps(gpsArray,startTime,endTime);
 
 
 //var time = Date.now();
@@ -74,7 +74,8 @@ conn.on('error', function (err) {
 });
 
 conn.once('open', function() {
-  require('./gpsFun.js')                         
+  require('./gpsFun.js');
+  require('./routes/api.js');                         
 });
 
 //used middlewares

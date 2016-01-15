@@ -1,11 +1,11 @@
 var Gps = require('../models/gps');
 
   module.exports = {
-  getDataAtTimeForOneGps: function (gps,time) {
+  getDataAtTimeForOneGps: function (gpsId,time) {
     // whatever
   Gps.
     find({  
-    gpsId: gps
+    gpsId: gpsId
   }).
   where('createdAt').lt(time).
   limit(1).
@@ -14,6 +14,7 @@ var Gps = require('../models/gps');
   exec(function(err, result) {
   if (err) throw err;
   console.log(result);
+  return result;
 });
   },
   getDataAtTimeForMultipleGps: function (gpsArray,time) {

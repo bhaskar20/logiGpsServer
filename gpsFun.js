@@ -8,7 +8,6 @@ var options = {
 
 var server = gps.server(options,function(device,connection){
 	connection.on("data",function(res){
-        console.log(res+ "from server");
     });
     connection.on("end",function (data) {
         console.log("device left" + connection.device.uid+ "from server");
@@ -28,7 +27,7 @@ var server = gps.server(options,function(device,connection){
     });
     device.on("status",function (data,fullData) {
         console.log("data from:"+ connection.device.uid+ "from server");
-        console.log(data + "from server");
+        console.log(data.termInfoContent,voltSignal,gsmSignal + "from server");
         console.log(fullData+ "from server");
     });
 
