@@ -1,5 +1,6 @@
 config/*
 node_modules/*
+resoures/LogiWebApp.pem
 npm-debug.log
 .package.json.*
 resources/
