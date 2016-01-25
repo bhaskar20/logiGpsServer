@@ -41,7 +41,7 @@ console.log(JSON.stringify(data));
     });
     device.on("ping",function (data) {
         var gpsinfo = new gpsModel({
-            "gpsId": uid,
+            "gpsId": connection.device.uid,
             "location": [1.4, 2.243],
             "speed": 10.4
         });
