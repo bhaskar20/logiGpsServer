@@ -7,7 +7,7 @@ var gpsDataSave = new Schema({
   action:{type:String,required:true},
   gpsId: { type: String, required: true },
   timeStamp:{"type":Date, default:Date.now,required:true},
-  location :{ type: "<GeoJSON type>" , coordinates: <coordinates> },
+  location :{ type: [Number], index: '2d'},
   speed:{type:Number},
   courseData:{"type":Object},
   terminalInfo:{"type":Object},
@@ -16,7 +16,7 @@ var gpsDataSave = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var GpsData = mongoose.model('Gps', gpsDataSave);
+var GpsData = mongoose.model('GpsData', gpsDataSave);
 
 // make this available to our users in our Node applications
 module.exports = GpsData;

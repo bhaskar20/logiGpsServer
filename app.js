@@ -69,12 +69,47 @@ conn.on('open', function(ref) {
         gpsinfo.save(function(err) {
             if (err) throw err; //
 
-            console.log('User saved successfully!');
+            console.log('login saved successfully!');
         });
 
 //type-2
+/*
+var uid ="1234";
+var ping1 = { start: '7878',
+  packetLength: '1f',
+  protocolNumber: '12',
+  finish: '0d0a',
+  action: 'ping',
+  infoContent: '10011811032ec8020d8a9407d2b3e004546b0194146d650026b7',
+  infoSrNum: '0008',
+  errorCheck: '48e6' };
+  var ping2 = {"date":{"year":"2016","month":1,"day":24,"hour":17,"minute":3,"second":46},
+  "GpsSatNum":8,
+  "latitude":"19.1344",
+  "longitude":"0.0011",
+  "speed":4,
+  "course":{"gpsInfo":"differentialGps","gpsPos":false,"gpsLong":"west","gpsLat":"south","gpsCourse":"619"},
+  "Mcc":404,"Mnc":20,"Lac":28005,"CellTowerId":9911,"inserted":"2016-01-25T05:44:08.460Z"};
 
+  var gpsinfo = new gpsModel({
+            "action":"ping",
+            "gpsId": uid,
+            "timeStamp":new Date(ping2.date.year, ping2.date.month, ping2.date.day, ping2.date.hour, ping2.date.minute,ping2.date.second),
+            "location":[ping2.latitude,ping2.longitude],
+            "speed":ping2.speed,
+            "course":ping2.course,
+            "Others":{"GpsSatNum":ping2.GpsSatNum,"Mcc":ping2.Mcc,"Mnc":ping2.Mnc,"Lac":ping2.Lac,"CellTowerId":ping2.CellTowerId,"inserted":ping2.inserted}
 
+        });
+
+        // call the built-in save method to save to the database
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('ping saved successfully!');
+        });
+
+*/
     // query.getDataAtTimeForOneGps(gps,time);
     // query.getDataAtTimeForMultipleGps(gpsArray,time);
     // query.getDataBWTimeForOneGps(gps,startTime,endTime);
