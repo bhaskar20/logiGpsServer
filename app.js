@@ -12,7 +12,8 @@ var uriUtil = require('mongodb-uri');
 
 
 var query = require('./api/query');
-
+//for testing
+var gpsModel = require('./models/gpsdata');
 
 
 //code starts
@@ -47,6 +48,32 @@ conn.on('open', function(ref) {
     var endTime = Date.now();
     var gps = "123";
     var gpsArray = ["123", "124"];
+
+
+    //testing type -1
+    var data1={ start: '7878',
+  packetLength: '0a',
+  protocolNumber: '13',
+  finish: '0d0a',
+  action: 'status',
+  infoContent: '0406040002',
+  infoSrNum: '0001',
+  errorCheck: '7ad2' };
+
+   var gpsinfo = new gpsModel({
+            "action":"login",
+            "gpsId": data1.infoContent
+        });
+
+        // call the built-in save method to save to the database
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('User saved successfully!');
+        });
+
+//type-2
+
 
     // query.getDataAtTimeForOneGps(gps,time);
     // query.getDataAtTimeForMultipleGps(gpsArray,time);
