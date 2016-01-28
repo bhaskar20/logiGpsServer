@@ -34,7 +34,7 @@ console.log(JSON.stringify(data));
         });
         console.log("testing login from server");
 
-/*
+
 
     //testing type -1
     var data1=data;
@@ -50,8 +50,6 @@ console.log(JSON.stringify(data));
 
             console.log('login saved successfully!');
         });
-*/
-//type-2
 
         device.login_authorized(true,data);
 
@@ -75,7 +73,7 @@ console.log(JSON.stringify(data));
 
 
 
-        /*
+        
         var uid2 = connection.device.uid;
       var ping2 = data;
 
@@ -90,8 +88,7 @@ console.log(JSON.stringify(data));
 
         });
 
-        // call the built-
-        */
+        
         console.log( "from ping from server");
 
         console.log("data from:"+ connection.device.uid+ "from server");
@@ -106,7 +103,7 @@ console.log(JSON.stringify(data));
         console.log(JSON.stringify(alarmData));
         console.log(JSON.stringify(fullData));
 
-/*
+
        var uid4 =connection.device.uid;
 
 var alarm2=data;
@@ -124,7 +121,7 @@ var gpsinfo = new gpsModel({
             "alarmData":alarm2.alarmData
         });
 
-*/
+
     });
     device.on("status",function (data,fullData) {
         console.log("data from:"+ connection.device.uid+ "from server");
@@ -137,7 +134,7 @@ var gpsinfo = new gpsModel({
         console.log(JSON.stringify(data));
         console.log(JSON.stringify(fullData));
 
-        /*
+        
         var uid3 =connection.device.uid;
 var statusdata = data;
 
@@ -154,7 +151,7 @@ var gpsinfo = new gpsModel({
             console.log('status saved successfully!');
         });
 
-*/
+
 
     });
 

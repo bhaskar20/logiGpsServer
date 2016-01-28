@@ -73,7 +73,7 @@ conn.on('open', function(ref) {
         });
 */
 //type-2
-
+/*
 var uid2 ="1234";
 var ping1 = { start: '7878',
   packetLength: '1f',
@@ -156,7 +156,7 @@ var gpsinfo = new gpsModel({
 
             console.log('alarm saved successfully!');
         });
-
+*/
     // query.getDataAtTimeForOneGps(gps,time);
     // query.getDataAtTimeForMultipleGps(gpsArray,time);
     // query.getDataBWTimeForOneGps(gps,startTime,endTime);
