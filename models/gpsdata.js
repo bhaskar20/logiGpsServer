@@ -9,7 +9,7 @@ var gpsDataSave = new Schema({
   timeStamp:{"type":Date, default:Date.now,required:true},
   location :{ type: [Number], index: '2d'},
   speed:{type:Number},
-  courseData:{"type":Object},
+  course:{"type":Object},
   terminalInfo:{"type":Object},
   Others:{"type":Object},
   alarmData:{"type":Object}

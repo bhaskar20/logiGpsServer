@@ -120,7 +120,7 @@ var gpsinfo = new gpsModel({
             "speed":alarm2.speed,
             "Others":{"GpsSatNum":alarm2.GpsSatNum,"Mcc":alarm2.Mcc,"Mnc":alarm2.Mnc,"Lac":alarm2.Lac,"CellTowerId":alarm2.CellTowerId},
             "course":alarm2.course,
-            "termInfo":alarm1,
+            "terminalInfo":alarm1,
             "alarmData":alarm2.alarmData
         });
 
@@ -144,7 +144,7 @@ var statusdata = data;
 var gpsinfo = new gpsModel({
             "action":"status",
             "gpsId": uid3,
-            "termInfo":statusdata
+            "terminalInfo":statusdata
         });
 
         // call the built-in save method to save to the database
