@@ -132,7 +132,6 @@ var gpsinfo = new gpsModel({
 //type-4
 //type alarm
 var uid ="123";
-var 
 
 var alarm2={"date":{"year":"2013","month":1,"day":7,"hour":15,"minute":32,"second":41},"GpsSatNum":6,"latitude":"39.9071","longitude":"0.0018","speed":0,"course":{"gpsInfo":"differentialGps","gpsPos":false,"gpsLong":"east","gpsLat":"south","gpsCourse":"534"},"LbsDataLength":"09","Mcc":404,"Mnc":20,"Lac":28005,"CellTowerId":6532,"alarmData":{"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"powerCut","language":"english"}}};
 var alarm1= {"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"powerCut","language":"english"}};
@@ -145,9 +144,9 @@ var gpsinfo = new gpsModel({
             "timeStamp":new Date(alarm2.date.year, alarm2.date.month, alarm2.date.day, alarm2.date.hour, alarm2.date.minute,alarm2.date.second),
             "location":[alarm2.latitude,alarm2.longitude],
             "speed":alarm2.speed,
-            "Others":{"GpsSatNum":alarm2.GpsSatNum,"Mcc":alarm2.Mcc,"Mnc":alarm2.Mnc,"Lac":alarm2.Lac,"CellTowerId":alarm2.CellTowerId}
+            "Others":{"GpsSatNum":alarm2.GpsSatNum,"Mcc":alarm2.Mcc,"Mnc":alarm2.Mnc,"Lac":alarm2.Lac,"CellTowerId":alarm2.CellTowerId},
             "course":alarm2.course,
-            "termInfo":alarm1
+            "termInfo":alarm1,
             "alarmData":alarm2.alarmData
         });
 
