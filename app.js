@@ -74,7 +74,7 @@ conn.on('open', function(ref) {
 */
 //type-2
 
-var uid ="1234";
+var uid2 ="1234";
 var ping1 = { start: '7878',
   packetLength: '1f',
   protocolNumber: '12',
@@ -93,7 +93,7 @@ var ping1 = { start: '7878',
 
   var gpsinfo = new gpsModel({
             "action":"ping",
-            "gpsId": uid,
+            "gpsId": uid2,
             "timeStamp":new Date(ping2.date.year, ping2.date.month, ping2.date.day, ping2.date.hour, ping2.date.minute,ping2.date.second),
             "location":[ping2.latitude,ping2.longitude],
             "speed":ping2.speed,
@@ -113,12 +113,12 @@ var ping1 = { start: '7878',
 
 //type-3
 //type status
-var uid ="1234";
+var uid3 ="1234";
 var statusdata = {"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"normal","language":"english"}};
 
 var gpsinfo = new gpsModel({
             "action":"status",
-            "gpsId": uid,
+            "gpsId": uid3,
             "termInfo":statusdata
         });
 
@@ -131,7 +131,7 @@ var gpsinfo = new gpsModel({
 
 //type-4
 //type alarm
-var uid ="123";
+var uid4 ="123";
 
 var alarm2={"date":{"year":"2013","month":1,"day":7,"hour":15,"minute":32,"second":41},"GpsSatNum":6,"latitude":"39.9071","longitude":"0.0018","speed":0,"course":{"gpsInfo":"differentialGps","gpsPos":false,"gpsLong":"east","gpsLat":"south","gpsCourse":"534"},"LbsDataLength":"09","Mcc":404,"Mnc":20,"Lac":28005,"CellTowerId":6532,"alarmData":{"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"powerCut","language":"english"}}};
 var alarm1= {"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"powerCut","language":"english"}};
@@ -140,7 +140,7 @@ var alarm1= {"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","a
 
 var gpsinfo = new gpsModel({
             "action":"alarm",
-            "gpsId": uid,
+            "gpsId": uid4,
             "timeStamp":new Date(alarm2.date.year, alarm2.date.month, alarm2.date.day, alarm2.date.hour, alarm2.date.minute,alarm2.date.second),
             "location":[alarm2.latitude,alarm2.longitude],
             "speed":alarm2.speed,
@@ -154,7 +154,7 @@ var gpsinfo = new gpsModel({
         gpsinfo.save(function(err) {
             if (err) throw err; //
 
-            console.log('status saved successfully!');
+            console.log('alarm saved successfully!');
         });
 
     // query.getDataAtTimeForOneGps(gps,time);
