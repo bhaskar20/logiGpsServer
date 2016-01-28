@@ -34,6 +34,24 @@ console.log(JSON.stringify(data));
         });
         console.log("testing login from server");
 
+/*
+
+    //testing type -1
+    var data1=data;
+
+   var gpsinfo = new gpsModel({
+            "action":"login",
+            "gpsId": data1.infoContent
+        });
+
+        // call the built-in save method to save to the database
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('login saved successfully!');
+        });
+*/
+//type-2
 
         device.login_authorized(true,data);
 
@@ -52,6 +70,28 @@ console.log(JSON.stringify(data));
 
             console.log('User saved successfully!');
         });
+
+
+
+
+
+        /*
+        var uid2 = connection.device.uid;
+      var ping2 = data;
+
+  var gpsinfo = new gpsModel({
+            "action":"ping",
+            "gpsId": uid2,
+            "timeStamp":new Date(ping2.date.year, ping2.date.month, ping2.date.day, ping2.date.hour, ping2.date.minute,ping2.date.second),
+            "location":[ping2.latitude,ping2.longitude],
+            "speed":ping2.speed,
+            "course":ping2.course,
+            "Others":{"GpsSatNum":ping2.GpsSatNum,"Mcc":ping2.Mcc,"Mnc":ping2.Mnc,"Lac":ping2.Lac,"CellTowerId":ping2.CellTowerId,"inserted":ping2.inserted}
+
+        });
+
+        // call the built-
+        */
         console.log( "from ping from server");
 
         console.log("data from:"+ connection.device.uid+ "from server");
@@ -66,6 +106,25 @@ console.log(JSON.stringify(data));
         console.log(JSON.stringify(alarmData));
         console.log(JSON.stringify(fullData));
 
+/*
+       var uid4 =connection.device.uid;
+
+var alarm2=data;
+var alarm1= alarmData;
+
+var gpsinfo = new gpsModel({
+            "action":"alarm",
+            "gpsId": uid4,
+            "timeStamp":new Date(alarm2.date.year, alarm2.date.month, alarm2.date.day, alarm2.date.hour, alarm2.date.minute,alarm2.date.second),
+            "location":[alarm2.latitude,alarm2.longitude],
+            "speed":alarm2.speed,
+            "Others":{"GpsSatNum":alarm2.GpsSatNum,"Mcc":alarm2.Mcc,"Mnc":alarm2.Mnc,"Lac":alarm2.Lac,"CellTowerId":alarm2.CellTowerId},
+            "course":alarm2.course,
+            "termInfo":alarm1,
+            "alarmData":alarm2.alarmData
+        });
+
+*/
     });
     device.on("status",function (data,fullData) {
         console.log("data from:"+ connection.device.uid+ "from server");
@@ -77,6 +136,26 @@ console.log(JSON.stringify(data));
         console.log(fullData + "prontong for status from server");
         console.log(JSON.stringify(data));
         console.log(JSON.stringify(fullData));
+
+        /*
+        var uid3 =connection.device.uid;
+var statusdata = data;
+
+var gpsinfo = new gpsModel({
+            "action":"status",
+            "gpsId": uid3,
+            "termInfo":statusdata
+        });
+
+        // call the built-in save method to save to the database
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('status saved successfully!');
+        });
+
+*/
+
     });
 
 

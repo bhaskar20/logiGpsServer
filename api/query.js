@@ -1,5 +1,7 @@
 var Gps = require('../models/gps');
 
+
+
   module.exports = {
   getDataAtTimeForOneGps: function (gpsId,time) {
     // whatever
@@ -7,10 +9,10 @@ var Gps = require('../models/gps');
     find({  
     gpsId: gpsId
   }).
-  where('createdAt').lt(time).
+  where('timeStamp').lt(time).
   limit(1).
-  sort({ 'createdAt': -1 }).
-  select({ gpsId: 1, createdAt: 1 ,location:1,speed:1}).
+  sort({ 'timeStamp': -1 }).
+  select({ gpsId: 1, timeStamp: 1 ,location:1,speed:1,action:1}).
   exec(function(err, result) {
   if (err) throw err;
   console.log(result);
@@ -23,10 +25,10 @@ Gps.
   find({  
     gpsId: { $in: gpsArray }
   }).
-  where('createdAt').lt(time).
+  where('timeStamp').lt(time).
   limit(1).
-  sort({ 'createdAt': -1 }).
-  select({ gpsId: 1, createdAt: 1 ,location:1,speed:1}).
+  sort({ 'timeStamp': -1 }).
+  select({ gpsId: 1, timeStamp: 1 ,location:1,speed:1,action:1}).
   exec(function(err, result) {
   if (err) throw err;
   console.log(result);
@@ -38,9 +40,9 @@ Gps.
   find({
     gpsId: gps
   }).
-  where('createdAt').lt(endTime).gt(startTime).
-  sort({ 'createdAt': -1 }).
-  select({ gpsId: 1, createdAt: 1 ,gpsId:1}).
+  where('timeStamp').lt(endTime).gt(startTime).
+  sort({ 'timeStamp': -1 }).
+  select({ gpsId: 1, timeStamp: 1 ,location:1,speed:1,action:1}).
   exec(function(err, result) {
   if (err) throw err;
   console.log(result);
@@ -52,9 +54,9 @@ Gps.
   find({
     gpsId: { $in: gpsArray }
   }).
-  where('createdAt').lt(endTime).gt(startTime).
-  sort({ 'createdAt': -1 }).
-  select({ gpsId: 1, createdAt: 1 ,gpsId:1}).
+  where('timeStamp').lt(endTime).gt(startTime).
+  sort({ 'timeStamp': -1 }).
+  select({ gpsId: 1, timeStamp: 1 ,location:1,speed:1,action:1}).
   exec(function(err, result) {
   if (err) throw err;
   console.log(result);
