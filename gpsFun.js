@@ -62,6 +62,12 @@ console.log("testing login from server");
 
         });
 
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('ping  saved successfully!');
+        });
+
         
         console.log( "from ping from server");
 
@@ -93,6 +99,12 @@ var gpsinfo = new gpsModel({
             "course":alarm2.course,
             "terminalInfo":alarm1,
             "alarmData":alarm2.alarmData
+        });
+
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('alarm saved successfully!');
         });
 
 
