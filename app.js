@@ -48,7 +48,7 @@ conn.on('open', function(ref) {
     var endTime = Date.now();
     var gps = "123";
     var gpsArray = ["123", "124"];
-
+/*
 
     //testing type -1
     var data1={ start: '7878',
@@ -71,9 +71,9 @@ conn.on('open', function(ref) {
 
             console.log('login saved successfully!');
         });
-
+*/
 //type-2
-/*
+
 var uid ="1234";
 var ping1 = { start: '7878',
   packetLength: '1f',
@@ -109,7 +109,55 @@ var ping1 = { start: '7878',
             console.log('ping saved successfully!');
         });
 
-*/
+
+
+//type-3
+//type status
+var uid ="1234";
+var statusdata = {"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"normal","language":"english"}};
+
+var gpsinfo = new gpsModel({
+            "action":"status",
+            "gpsId": uid,
+            "termInfo":statusdata
+        });
+
+        // call the built-in save method to save to the database
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('status saved successfully!');
+        });
+
+//type-4
+//type alarm
+var uid ="123";
+var 
+
+var alarm2={"date":{"year":"2013","month":1,"day":7,"hour":15,"minute":32,"second":41},"GpsSatNum":6,"latitude":"39.9071","longitude":"0.0018","speed":0,"course":{"gpsInfo":"differentialGps","gpsPos":false,"gpsLong":"east","gpsLat":"south","gpsCourse":"534"},"LbsDataLength":"09","Mcc":404,"Mnc":20,"Lac":28005,"CellTowerId":6532,"alarmData":{"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"powerCut","language":"english"}}};
+var alarm1= {"termInfoContent":{},"voltLevel":"veryHigh","gsmSignal":"strong","alarmLang":{"alarmType":"powerCut","language":"english"}};
+
+
+
+var gpsinfo = new gpsModel({
+            "action":"alarm",
+            "gpsId": uid,
+            "timeStamp":new Date(alarm2.date.year, alarm2.date.month, alarm2.date.day, alarm2.date.hour, alarm2.date.minute,alarm2.date.second),
+            "location":[alarm2.latitude,alarm2.longitude],
+            "speed":alarm2.speed,
+            "Others":{"GpsSatNum":alarm2.GpsSatNum,"Mcc":alarm2.Mcc,"Mnc":alarm2.Mnc,"Lac":alarm2.Lac,"CellTowerId":alarm2.CellTowerId}
+            "course":alarm2.course,
+            "termInfo":alarm1
+            "alarmData":alarm2.alarmData
+        });
+
+        // call the built-in save method to save to the database
+        gpsinfo.save(function(err) {
+            if (err) throw err; //
+
+            console.log('status saved successfully!');
+        });
+
     // query.getDataAtTimeForOneGps(gps,time);
     // query.getDataAtTimeForMultipleGps(gpsArray,time);
     // query.getDataBWTimeForOneGps(gps,startTime,endTime);

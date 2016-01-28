@@ -11,7 +11,8 @@ var gpsDataSave = new Schema({
   speed:{type:Number},
   courseData:{"type":Object},
   terminalInfo:{"type":Object},
-  Others:{"type":Object}
+  Others:{"type":Object},
+  alarmData:{"type":Object}
 });
 
 // the schema is useless so far
