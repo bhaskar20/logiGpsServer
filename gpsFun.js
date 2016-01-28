@@ -20,19 +20,7 @@ var server = gps.server(options,function(device,connection){
         console.log(uid,data + " printing uid and then data from server");
 console.log(JSON.stringify(uid));
 console.log(JSON.stringify(data));
-        var gpsinfo = new gpsModel({
-            "gpsId": uid,
-            "location": [1.4, 2.34243],
-            "speed": 10.4
-        });
-
-        // call the built-in save method to save to the database
-        gpsinfo.save(function(err) {
-            if (err) throw err; //
-
-            console.log('User saved successfully!');
-        });
-        console.log("testing login from server");
+console.log("testing login from server");
 
 
 
@@ -56,21 +44,7 @@ console.log(JSON.stringify(data));
 
     });
     device.on("ping",function (data) {
-        var gpsinfo = new gpsModel({
-            "gpsId": connection.device.uid,
-            "location": [1.4, 2.243],
-            "speed": 10.4
-        });
-
-        // call the built-in save method to save to the database
-        gpsinfo.save(function(err) {
-            if (err) throw err; //
-
-            console.log('User saved successfully!');
-        });
-
-
-
+        
 
 
         
