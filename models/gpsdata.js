@@ -19,6 +19,5 @@ var gpsDataSave = new Schema({
 // we need to create a model using it
 var GpsData = mongoose.model('GpsData', gpsDataSave);
 
-//test from vs
 // make this available to our users in our Node applications
 module.exports = GpsData;

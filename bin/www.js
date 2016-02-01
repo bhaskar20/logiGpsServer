@@ -73,4 +73,5 @@ function onListening() {
 
 var server = http.createServer(app.app);
 
-server.listen(port);
+server.listen(port,function(){
+    console.log("server on 30001")});
