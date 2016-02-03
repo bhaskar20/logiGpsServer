@@ -136,10 +136,5 @@ var gpsinfo = new gpsModel({
 
             console.log('status saved successfully!');
         });
-
-
-
     });
-
-
 });
