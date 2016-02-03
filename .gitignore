@@ -4,3 +4,4 @@ resoures/LogiWebApp.pem
 npm-debug.log
 .package.json.*
 resources/
+*.sln
